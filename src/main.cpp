@@ -1,4 +1,5 @@
 #include <iostream>
+#include "student.h"
 using namespace std;
 
 void showMenu() {
@@ -10,5 +11,11 @@ void showMenu() {
 int main() {
     cout << "Student Manager started" << endl;
     showMenu();
+
+    Student s;
+    s.id = 1;
+    s.name = "Test Student";
+
     return 0;
 }
+
