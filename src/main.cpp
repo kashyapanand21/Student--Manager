@@ -4,9 +4,10 @@ using namespace std;
 
 void showMenu() {
     cout << "1. Add Student" << endl;
-    cout << "2. View Students" << endl;
-    cout << "3. Delete Student" << endl;
-    cout << "4. Exit" << endl;
+    cout << "2. Search Student" << endl;
+    cout << "3. View Students" << endl;
+    cout << "4. Delete Student" << endl;
+    cout << "5. Exit" << endl;
 }
 
 
@@ -20,4 +21,3 @@ int main() {
 
     return 0;
 }
-
