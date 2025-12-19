@@ -3,13 +3,14 @@
 
 #include <vector>
 #include "student.h"
-using namespace std ;
+
 class StudentManager {
 private:
-    vector<Student> students;
+    std::vector<Student> students;
 
 public:
     void addStudent(const Student& student);
+    void addStudentFromInput();
     void viewStudents() const;
 };
 

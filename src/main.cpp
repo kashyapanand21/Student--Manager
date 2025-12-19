@@ -3,13 +3,26 @@
 
 int main() {
     StudentManager manager;
+    int choice;
 
-    Student s;
-    s.id = 1;
-    s.name = "Test Student";
+    while (true) {
+        std::cout << "\n1. Add Student\n2. View Students\n3. Exit\n";
+        std::cout << "Enter choice: ";
+        std::cin >> choice;
 
-    manager.addStudent(s);
-    manager.viewStudents();
+        if (choice == 1) {
+            manager.addStudentFromInput();
+        } 
+        else if (choice == 2) {
+            manager.viewStudents();
+        } 
+        else if (choice == 3) {
+            break;
+        } 
+        else {
+            std::cout << "Invalid choice\n";
+        }
+    }
 
     return 0;
 }
