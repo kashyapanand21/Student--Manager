@@ -1,23 +1,15 @@
 #include <iostream>
-#include "student.h"
-using namespace std;
-
-void showMenu() {
-    cout << "1. Add Student" << endl;
-    cout << "2. Search Student" << endl;
-    cout << "3. View Students" << endl;
-    cout << "4. Delete Student" << endl;
-    cout << "5. Exit" << endl;
-}
-
+#include "student_manager.h"
 
 int main() {
-    cout << "Student Manager started" << endl;
-    showMenu();
+    StudentManager manager;
 
     Student s;
     s.id = 1;
     s.name = "Test Student";
+
+    manager.addStudent(s);
+    manager.viewStudents();
 
     return 0;
 }
