@@ -18,7 +18,16 @@ void StudentManager::addStudentFromInput() {
 }
 
 void StudentManager::viewStudents() const {
+    if (students.empty()) {
+        std::cout << "No students found.\n";
+        return;
+    }
+
+    std::cout << "\n--- Student List ---\n";
     for (const auto& s : students) {
-        std::cout << "ID: " << s.id << ", Name: " << s.name << std::endl;
+        std::cout << "ID   : " << s.id << "\n";
+        std::cout << "Name : " << s.name << "\n";
+        std::cout << "-------------------\n";
     }
 }
+
