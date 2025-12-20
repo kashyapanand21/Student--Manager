@@ -2,7 +2,19 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <limits>
 
+
+static int getValidInt() {
+    int value;
+    while (!(std::cin >> value)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input. Enter a number: ";
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    return value;
+}
 
 void StudentManager::addStudent(const Student& student) {
     students.push_back(student);
@@ -10,15 +22,20 @@ void StudentManager::addStudent(const Student& student) {
 
 void StudentManager::addStudentFromInput() {
     Student s;
-    std::cout << "Enter student ID: ";
-    std::cin >> s.id;
 
-    std::cout << "Enter student name: ";
-    std::cin.ignore();
-    std::getline(std::cin, s.name);
+    std::cout << "Enter student ID: ";
+    s.id = getValidInt();
+
+    while (true) {
+        std::cout << "Enter student name: ";
+        std::getline(std::cin, s.name);
+        if (!s.name.empty()) break;
+        std::cout << "Name cannot be empty.\n";
+    }
 
     students.push_back(s);
 }
+
 
 void StudentManager::viewStudents() const {
     if (students.empty()) {
