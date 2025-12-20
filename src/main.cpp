@@ -3,6 +3,8 @@
 
 int main() {
     StudentManager manager;
+    manager.loadFromFile();
+
     int choice;
 
     while (true) {
@@ -23,6 +25,8 @@ int main() {
             std::cout << "Invalid choice\n";
         }
     }
+    manager.saveToFile();
+
 
     return 0;
 }

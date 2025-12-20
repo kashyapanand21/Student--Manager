@@ -12,6 +12,9 @@ public:
     void addStudent(const Student& student);
     void addStudentFromInput();
     void viewStudents() const;
+    void loadFromFile();
+    void saveToFile() const;
+
 };
 
 #endif
